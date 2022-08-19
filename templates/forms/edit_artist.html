@@ -3,16 +3,16 @@
 {% block content %}
   <div class="form-wrapper">
     <form class="form" method="post" action="/artists/{{artist.id}}/edit">
-      <h3 class="form-heading">Edit artist <em>{{ artist.name }}</em></h3>
+      <h3 class="form-heading">Edit artist <em>{{ artist.name }}</em><a href="{{ url_for('index') }}" title="Back to homepage"><i class="fa fa-home pull-right"></i></a></h3>
       <div class="form-group">
         <label for="name">Name</label>
-        {{ form.name(class_ = 'form-control', autofocus = true) }}
+        {{ form.name(class_ = 'form-control', placeholder=artist.name, autofocus = true) }}
       </div>
       <div class="form-group">
           <label>City & State</label>
           <div class="form-inline">
             <div class="form-group">
-              {{ form.city(class_ = 'form-control', placeholder='City', autofocus = true) }}
+              {{ form.city(class_ = 'form-control', placeholder=artist.city, autofocus = true) }}
             </div>
             <div class="form-group">
               {{ form.state(class_ = 'form-control', placeholder='State', autofocus = true) }}
@@ -21,7 +21,7 @@
       </div>
       <div class="form-group">
           <label for="phone">Phone</label>
-          {{ form.phone(class_ = 'form-control', placeholder='xxx-xxx-xxxx', autofocus = true) }}
+          {{ form.phone(class_ = 'form-control', placeholder=artist.phone, autofocus = true) }}
         </div>
       <div class="form-group">
         <label for="genres">Genres</label>
@@ -30,17 +30,17 @@
       </div>
       <div class="form-group">
           <label for="facebook_link">Facebook Link</label>
-          {{ form.facebook_link(class_ = 'form-control', placeholder='http://', autofocus = true) }}
+          {{ form.facebook_link(class_ = 'form-control', placeholder=artist.facebook_link, autofocus = true) }}
         </div>
       
       <div class="form-group">
           <label for="image_link">Image Link</label>
-          {{ form.image_link(class_ = 'form-control', placeholder='http://', autofocus = true) }}
+          {{ form.image_link(class_ = 'form-control', placeholder=artist.image_link, autofocus = true) }}
       </div>
 
       <div class="form-group">
             <label for="website_link">Website Link</label>
-            {{ form.website_link(class_ = 'form-control', placeholder='http://', autofocus = true) }}
+            {{ form.website_link(class_ = 'form-control', placeholder=artist.website, autofocus = true) }}
       </div>
 
       <div class="form-group">
